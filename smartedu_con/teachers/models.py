@@ -10,5 +10,6 @@ class Teachers(models.Model):
     linkedin = models.URLField(max_length=100, blank=True)
     youtube = models.URLField(max_length=100, blank=True)
     
+    
     def __str__(self):
         return self.name
