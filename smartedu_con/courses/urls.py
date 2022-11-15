@@ -7,6 +7,7 @@ urlpatterns = [
     path('<slug:category_slug>/<int:course_id>',views.course_detail, name="course_detail"),
     path('categories/<slug:category_slug>',views.category_list, name="courses_by_category"),
     path('tags/<slug:tag_slug>',views.tag_list, name="courses_by_tag"),
+    path('search/', views.search, name="search"),
     
     #path(route, view, opt(shortcut_name))
 ]

@@ -32,7 +32,7 @@
                                 <div class="course-meta-bot">
                                     <ul>
                                         <li><i class="fa fa-calendar" aria-hidden="true"></i> {{course.date|date:"d M Y"}}</li>
-                                        <li><i class="fa fa-book" aria-hidden="true"></i> {{course.teacher}}</li>
+                                        <li><i class="fa fa-book" aria-hidden="true"></i> <a href="{% url 'teacher_detail' course.teacher.pk %}">{{course.teacher}}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
 				<div class="col-lg-3 col-12 right-single">
 					<div class="widget-search">
 						<div class="site-search-area">
-							<form method="get" id="site-searchform" action="#">
+							<form method="get" id="site-searchform" action="{% url 'search' %}">
 								<div>
 									<input class="input-text form-control" name="search" placeholder="Search keywords..." type="text">
 									<input id="searchsubmit" value="Search" type="submit">

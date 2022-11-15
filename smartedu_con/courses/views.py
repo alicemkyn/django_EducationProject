@@ -54,3 +54,29 @@ def tag_list(request, tag_slug):
         'tags':tags,
     }
     return render(request,'courses.html',context)
+
+
+def search(request):
+    courses = Course.objects.filter(name__contains=request.GET['search'])
+    categories = Category.objects.all()
+    tags = Tag.objects.all()
+    
+    context = {
+        'courses':courses,
+        'categories':categories,
+        'tags':tags
+    }    
+    return render(request,'courses.html',context)
+
+
+# def search(request):
+#     courses = Course.objects.filter(description__contains=request.GET['search'])
+#     categories = Category.objects.all()
+#     tags = Tag.objects.all()
+    
+#     context = {
+#         'courses':courses,
+#         'categories':categories,
+#         'tags':tags
+#     }    
+#     return render(request,'courses.html',context)
